@@ -1,30 +1,30 @@
+import mongoose from "mongoose";
 
-import mongoose  from "mongoose "
 import jwt from "jsonwebtoken"
 import bcrypt from "bcrypt"
 
 
-const fileSchema = new mongoose.schema({
-   
-    userCollection:{
-        "_id": ObjectId,
-        
-        "passwordHash": String, // Hashed password for user authentication
-        "devices": [
-          {
-            "deviceId": String,
-            "deviceType": String, // e.g., "laptop", "mobile"
-            "lastActive": Date
-          }
-        ]
-      }
-      
+const userCollection = new mongoose.Schema({
+  _id:{
+    type:objectId,
+    required:true,
+    unique:true,
+  },
+
   
-   
-  
-},{
-    timeStamps:true
-})
+refressToken:{
+  type:String
+}
 
 
-export const FileSchema = mongoose.model("FileSchema",fileSchema)
+
+
+
+
+
+
+},{timestamps:true})
+
+
+
+export const userCollections = mongoose.model("userCollections",userCollection)
